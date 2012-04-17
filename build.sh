@@ -1,4 +1,4 @@
-#! /bin/csh
+#! /bin/sh
 # Combines Source Files. In terminal, sh build.sh
 # It will put a new video.js file under dist/
 
@@ -45,3 +45,10 @@ cp LGPLv3-LICENSE.txt dist/LGPLv3-LICENSE.txt
 
 java -jar build/lib/yuicompressor-2.4.7.jar dist/video.js -o dist/video.min.js
 java -jar build/lib/yuicompressor-2.4.7.jar dist/video-js.css -o dist/video-js.min.css
+
+# Photologue
+mkdir -p ../photologue/static/video-js
+cp dist/video.min.js ../photologue/static/video-js/video.min.js
+cp dist/video-js.min.css ../photologue/static/video-js/video-js.min.css
+cp dist/video-js.png ../photologue/static/video-js/video-js.png
+cp dist/video-js.swf ../photologue/static/video-js/video-js.swf
